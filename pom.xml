@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.trimble.test</groupId>
+    <artifactId>venkatacodechallenge</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>8.5.1</version>
+            <exclusions>
+<!-- To Avoid transitive vulnerable dependency maven:commons-collections:commons-collections:3.2.2  Uncontrolled Recursion vulnerability-->
+            <exclusion>
+                    <groupId>commons-collections</groupId>
+                    <artifactId>commons-collections</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.8.0</version>
+            <scope>test</scope>
+   <!-- To Avoid transitive vulnerable dependency maven:org.webjars:jquery:3.6.1 -->
+            <exclusions>
+                <exclusion>
+                        <groupId>org.webjars</groupId>
+                        <artifactId>jquery</artifactId>
+                 </exclusion>
+            </exclusions>
+        </dependency>
+
+    </dependencies>
+</project>
